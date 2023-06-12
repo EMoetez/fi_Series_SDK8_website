@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="Author" content="Moetez">
+      <meta name="description" content="fi_Series_SDK_1.4.0">
+      <link rel="stylesheet" href="Styel.css">
+    </head>
+    <body class="bd">
+      <div class="container" >
+        <table class="gridtable">
+          <tbody>
+            <tr>
+              <th>PixelType</th>
+              <td colspan="4"> 
+                <select id="pixelType">
+                  <option value="0" >Black&White</option> 
+                  <option value="1">GrayScale</option>       
+                  <option value="2" selected="selected">RGB</option>         
+                  <option value="3">Automatic</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>PaperSupply</th>
+              <td>
+                <select id="paperSupply">
+                <option value="0" >Flatbed</option> 
+                <option value="1" selected="selected">ADF</option>       
+                <option value="2" >ADF(Duplex)</option>         
+                <option value="3">ADF(BackSide)</option>
+                </select>
+              </td>
+            </tr> 
+            <tr>
+              <th>Resolution</th>
+              <td>
+                  <select id="resolution">
+                  <option value="0" >200</option> 
+                  <option value="2" selected="selected">300</option>       
+                  <option value="5">600</option>
+                  </select>
+              </td>
+            </tr> 
+            <tr>
+              <th>PaperSize</th>
+              <td>
+                <select id="papersize">
+                  <option value="0" >A3</option> 
+                  <option value="1" selected="selected">A4</option>       
+                  <option value="2" >A5</option>         
+                  <option value="3">A6</option>
+                  <option value="4" >B4(JIS)</option> 
+                  <option value="5" >B5(JIS)</option>       
+                  <option value="6" >B6(JIS)</option>         
+                  <option value="7">Letter</option>
+                  <option value="8" >Legal</option> 
+                  <option value="11" >PostCard</option>       
+                
+                  </select>
+              </td>
+            </tr> 
+            <tr>
+              <th>Rotation</th>
+              <td>
+                <select id="rotation">
+                <option value="0" >None</option> 
+                <option value="1" selected="selected">R90</option>       
+                <option value="2" >R180</option>         
+                <option value="3">R270</option>
+                <option value="4" >Automatic</option> 
+              </select>
+              </td>
+            </tr>
+             <tr>
+              <th>Brightness</th>
+              <td id="brightness">
+                <input id="slider1" type="range" class="textright"  value="128" min="0" max="255" oninput="this.nextElementSibling.value=this.value"  />
+                <output>128</output>
+              </td>
+            </tr>
+            <tr>
+              <th>Contrast</th>
+              <td><input id="slider2" type="range"  class="textright" value="128" min="0" max="255" oninput="this.nextElementSibling.value=this.value"  />
+                <output>128</output></td>
+            </tr>
+             <tr>
+              <th>Threshold</th>
+              <td>
+                <input id="slider3" type="range" class="textright"  value="128" min="-2" max="255" oninput="this.nextElementSibling.value=this.value"  />
+                <output>128</output></td>
+            </tr> 
+            <tr>
+              <th>FileType</th>
+              <td>
+                <select id="fileType">
+                  <option value="0">BMP</option>
+                  <option value="1" >TIFF</option>
+                  <option value="3" selected="select">JPEG</option>
+
+                </select>
+              </td>
+            </tr> 
+            <tr>
+              <th>FileName</th>
+              <td>
+                <input type="text" value="C:\temp\image"/>
+              </td>
+            </tr>
+             <tr>
+              <th>FileCounter</th>
+              <td colspan="2">
+                  <input type="number" id="fileCounter" value="1" title="Value range from -1 aand 0 to 65535" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <input type="button" id="btn_SelectSource" value="Select Source" />
+              <input type="button" id="btn_Scan" value=" Scan"/>
+              </td>
+            </tr>
+           
+          </tbody>
+         
+        </table>
+        <div class="resultlist" style="margin-right:10px;margin-top:20px;"> 
+          <table id="output" class="resultgridtable">
+            <tbody>
+               <tr>
+                 <th style="padding-right:20px;" >No.</th>
+                 <th style="padding-right:20px; width:200px";> Files</th>
+                 <th >Base 64</th>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="imgz">
+          <img id="image" src="painting.png" style="display:block;width:200px;height:300px;" alt="Error displaying element  "/>
+        </div>
+      </div>
+      
+    </body>
+</html>
